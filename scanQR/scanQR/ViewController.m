@@ -53,7 +53,7 @@
     [[UINavigationBar appearance] setShadowImage:[UIImage new]];
 
     self.navigationItem.title = @"首页";
-    //    取消导航半透明Translucent 
+    //    取消导航半透明Translucent
     if ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0) {
         [[UINavigationBar appearance] setTranslucent:NO];
     }
@@ -62,7 +62,7 @@
     }
 //    [self.qrText canPerformAction:@selector(textselector:) withSender:self];
 }
-
+//这个地方要重写canPerformAction
 //-(void)textselector{
 //
 //    if (action == @selector(paste:))//禁止粘贴
