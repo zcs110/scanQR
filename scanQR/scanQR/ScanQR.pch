@@ -1,0 +1,36 @@
+//
+//  ScanQR.pch
+//  scanQR
+//
+//  Created by 朱长昇 on 16/5/9.
+//  Copyright © 2016年 sinoglobal. All rights reserved.
+//
+#import <Availability.h>
+#ifndef ScanQR_pch
+#define ScanQR_pch
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+/** 当前屏幕宽 */
+#define screenWidth [UIScreen mainScreen].bounds.size.width
+
+/** 约束视图宽 */
+#define viewHeight [UIScreen mainScreen].bounds.size.height/568.0
+
+/** 约束视图宽 */
+#define viewWidth [UIScreen mainScreen].bounds.size.width/320
+
+/** 当前屏幕高 */
+#define screenHeight [UIScreen mainScreen].bounds.size.height
+
+/** 获得颜色 */
+#define  FXQColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+/** 获得颜色 */
+#define  FXQColorRGBA(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* ScanQR_pch */
