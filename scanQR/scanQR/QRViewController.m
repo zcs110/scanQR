@@ -25,7 +25,11 @@
     CIFilter *filter=[CIFilter filterWithName:@"CIQRCodeGenerator"];
     [filter setDefaults];
     //Value必须传入数据流
-    [filter setValue:[@"https://m.baidu.com" dataUsingEncoding:NSUTF8StringEncoding] forKey:@"inputMessage"];
+    if (!self.qrString) {
+        self.qrString = @"https://m.baidu.com";
+    }
+
+    [filter setValue:[self.qrString dataUsingEncoding:NSUTF8StringEncoding] forKey:@"inputMessage"];
     //4.获取生成的图片
     CIImage *ciImg=filter.outputImage;
     //放大ciImg,默认生产的图片很小
@@ -51,6 +55,7 @@
     //7.1开启图形上下文
     UIGraphicsBeginImageContext(img.size);
     //7.2将二维码的图片画入
+    //BSXPCMessage received error for message: Connection interrupted   why??
     [img drawInRect:CGRectMake(10, 10, img.size.width-20, img.size.height-20)];
     //7.3在中心划入其他图片
     

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -31,8 +30,7 @@
                                 </constraints>
                                 <state key="normal" title="生成二维码"/>
                                 <connections>
-                                    <action selector="creatMyQR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afk-R6-PhD"/>
-                                    <segue destination="Xfq-1D-K2A" kind="show" id="OmV-0E-Cbm"/>
+                                    <action selector="creatMyQR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vsC-in-Poj"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="http://www.baidu.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L8R-HD-ypI">
@@ -43,7 +41,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="要生成二维码的内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxW-BF-3LO">
                                 <rect key="frame" x="35" y="209" width="153" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -63,59 +61,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="yxi-eM-pAM"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="qrText" destination="L8R-HD-ypI" id="DBp-qe-CEF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="922.5" y="385.5"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ao3-1H-ebf">
-            <objects>
-                <viewController id="Xfq-1D-K2A" customClass="QRViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aSk-JF-SUg"/>
-                        <viewControllerLayoutGuide type="bottom" id="XVM-xA-cvb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UZC-Mx-wPZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ybU-pL-Zqg">
-                                <rect key="frame" x="87" y="234" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="3cf-TG-AJV"/>
-                                    <constraint firstAttribute="width" secondItem="ybU-pL-Zqg" secondAttribute="height" multiplier="1:1" id="r6m-9e-M2z"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvU-uV-1wq">
-                                <rect key="frame" x="131" y="442" width="112" height="30"/>
-                                <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="AXM-DQ-Tv9"/>
-                                    <constraint firstAttribute="width" constant="112" id="t6c-OS-fuT"/>
-                                </constraints>
-                                <state key="normal" title="保存到相册"/>
-                                <connections>
-                                    <action selector="writeToPhoto:" destination="Xfq-1D-K2A" eventType="touchUpInside" id="MiG-db-p4F"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="fvU-uV-1wq" firstAttribute="top" secondItem="ybU-pL-Zqg" secondAttribute="bottom" constant="8" id="JRy-hj-5K2"/>
-                            <constraint firstItem="fvU-uV-1wq" firstAttribute="centerX" secondItem="UZC-Mx-wPZ" secondAttribute="centerX" id="LWX-Y8-q1T"/>
-                            <constraint firstItem="ybU-pL-Zqg" firstAttribute="centerX" secondItem="UZC-Mx-wPZ" secondAttribute="centerX" id="S0O-Sj-g3E"/>
-                            <constraint firstItem="ybU-pL-Zqg" firstAttribute="centerY" secondItem="UZC-Mx-wPZ" secondAttribute="centerY" id="lrQ-Un-e0a"/>
-                        </constraints>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="qrImageView" destination="ybU-pL-Zqg" id="tzN-sC-8Ga"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9uV-A2-eIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1384.5" y="385.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z1N-c0-yVU">

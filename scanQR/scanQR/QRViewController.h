@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface QRViewController : UIViewController
+/** 要传入的字符串 */
+@property (nonatomic, copy) NSString *qrString;
 
 @end

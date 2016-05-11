@@ -15,6 +15,7 @@
     UIButton* rightBtnItem;
     UIButton* leftBtnItem;
 }
+@property (weak, nonatomic) IBOutlet UITextField *qrText;
 
 @end
 
@@ -90,17 +91,22 @@
         [alert show];
     }
     else {
-        
         ScanViewController* scanVC = [[ScanViewController alloc] init];
-        //    scanVC.navigationController.title =@"优惠券详情";
         [self.navigationController pushViewController:scanVC animated:YES];
     }
 }
 //生成二维码
 - (IBAction)creatMyQR:(UIButton *)sender {
     NSLog(@"QR");
-//    QRViewController* qrvc = [[QRViewController alloc] init];
-//    [self.navigationController pushViewController:qrvc animated:NO];
+    QRViewController* qrVC = [[QRViewController alloc] init];
+//    !simplyIntro || [simplyIntro isEqualToString:@""] || [simplyIntro isKindOfClass:[NSNull class]] || simplyIntro == nil
+    NSLog(@"ssss%@",self.qrText.text);
+    if ([self.qrText.text isEqualToString:@""]) {
+        self.qrText.text = @"https://m.baidu.com";
+    }
+    qrVC.qrString = self.qrText.text;
+    
+    [self.navigationController showViewController:qrVC sender:self];
 }
 
 #pragma mark - delegate

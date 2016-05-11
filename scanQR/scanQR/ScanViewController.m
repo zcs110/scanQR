@@ -265,15 +265,15 @@
 
         CZWebViewController *czWebView = [[CZWebViewController alloc]init];
         NSMutableString *urlStr = [NSMutableString string];
-
+        urlStr = [NSMutableString stringWithFormat:@"%@",object.stringValue];
         if ([object.stringValue hasPrefix:@"http"]) {
-             urlStr = [NSMutableString stringWithFormat:@"%@",object.stringValue];
+            
             czWebView.webViewURL = urlStr;
             [self.navigationController pushViewController:czWebView animated:YES];
 
         }else{
         
-            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"呜呜呜" message:@"小七不认识这个二维码。。。" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"扫描到的信息" message:urlStr delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [alertView show];
         }
         NSLog(@"%@",object.stringValue);

@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		112F85CF1CE18BE200AD0319 /* 1462850642716.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112F85CE1CE18BE200AD0319 /* 1462850642716.jpg */; };
-		112F85D31CE1936700AD0319 /* QRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 112F85D21CE1936700AD0319 /* QRViewController.m */; };
 		112F85D51CE1BD3500AD0319 /* Legal.html in Resources */ = {isa = PBXBuildFile; fileRef = 112F85D41CE1BD3500AD0319 /* Legal.html */; };
+		116945F41CE3067F00606D03 /* QRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116945F21CE3067F00606D03 /* QRViewController.m */; };
+		116945F51CE3067F00606D03 /* QRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 116945F31CE3067F00606D03 /* QRViewController.xib */; };
 		11E153A81CE08DCE00A5DCC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E153A71CE08DCE00A5DCC5 /* main.m */; };
 		11E153AB1CE08DCE00A5DCC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E153AA1CE08DCE00A5DCC5 /* AppDelegate.m */; };
 		11E153AE1CE08DCE00A5DCC5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E153AD1CE08DCE00A5DCC5 /* ViewController.m */; };
@@ -42,9 +43,10 @@
 
 /* Begin PBXFileReference section */
 		112F85CE1CE18BE200AD0319 /* 1462850642716.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1462850642716.jpg; sourceTree = "<group>"; };
-		112F85D11CE1936700AD0319 /* QRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRViewController.h; sourceTree = "<group>"; };
-		112F85D21CE1936700AD0319 /* QRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRViewController.m; sourceTree = "<group>"; };
 		112F85D41CE1BD3500AD0319 /* Legal.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Legal.html; sourceTree = "<group>"; };
+		116945F11CE3067F00606D03 /* QRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRViewController.h; sourceTree = "<group>"; };
+		116945F21CE3067F00606D03 /* QRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRViewController.m; sourceTree = "<group>"; };
+		116945F31CE3067F00606D03 /* QRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRViewController.xib; sourceTree = "<group>"; };
 		11E153A31CE08DCE00A5DCC5 /* scanQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scanQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E153A71CE08DCE00A5DCC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		11E153A91CE08DCE00A5DCC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,8 +99,9 @@
 		112F85D01CE1932C00AD0319 /* QRController */ = {
 			isa = PBXGroup;
 			children = (
-				112F85D11CE1936700AD0319 /* QRViewController.h */,
-				112F85D21CE1936700AD0319 /* QRViewController.m */,
+				116945F11CE3067F00606D03 /* QRViewController.h */,
+				116945F21CE3067F00606D03 /* QRViewController.m */,
+				116945F31CE3067F00606D03 /* QRViewController.xib */,
 			);
 			name = QRController;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				112F85CF1CE18BE200AD0319 /* 1462850642716.jpg in Resources */,
 				11E153B61CE08DCE00A5DCC5 /* LaunchScreen.storyboard in Resources */,
 				11E153B31CE08DCE00A5DCC5 /* Assets.xcassets in Resources */,
+				116945F51CE3067F00606D03 /* QRViewController.xib in Resources */,
 				11E153E11CE08F1100A5DCC5 /* CZWebViewController.xib in Resources */,
 				11E153B11CE08DCE00A5DCC5 /* Main.storyboard in Resources */,
 			);
@@ -319,7 +323,7 @@
 				11E153E01CE08F1100A5DCC5 /* CZWebViewController.m in Sources */,
 				11E153AE1CE08DCE00A5DCC5 /* ViewController.m in Sources */,
 				11E153AB1CE08DCE00A5DCC5 /* AppDelegate.m in Sources */,
-				112F85D31CE1936700AD0319 /* QRViewController.m in Sources */,
+				116945F41CE3067F00606D03 /* QRViewController.m in Sources */,
 				11E153A81CE08DCE00A5DCC5 /* main.m in Sources */,
 				11E153DB1CE08E7500A5DCC5 /* ScanViewController.m in Sources */,
 			);
