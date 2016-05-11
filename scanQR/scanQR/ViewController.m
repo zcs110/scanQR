@@ -53,15 +53,26 @@
     [[UINavigationBar appearance] setShadowImage:[UIImage new]];
 
     self.navigationItem.title = @"首页";
-    //    取消导航半透明Translucent
+    //    取消导航半透明Translucent 
     if ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0) {
         [[UINavigationBar appearance] setTranslucent:NO];
     }
     else {
         [[UINavigationBar appearance] setBackgroundImage:[self imageWithColor:FXQColor(202, 48, 130)] forBarMetrics:UIBarMetricsDefault];
     }
+//    [self.qrText canPerformAction:@selector(textselector:) withSender:self];
 }
 
+//-(void)textselector{
+//
+//    if (action == @selector(paste:))//禁止粘贴
+//        return NO;
+//    if (action == @selector(select:))// 禁止选择
+//        return NO;
+//    if (action == @selector(selectAll:))// 禁止全选
+//        return NO;
+//    return [super canPerformAction:action withSender:sender];
+//}
 - (UIImage*)imageWithColor:(UIColor*)color
 {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);

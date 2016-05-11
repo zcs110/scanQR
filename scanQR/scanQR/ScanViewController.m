@@ -262,7 +262,10 @@
     [self.session stopRunning];
     if (metadataObjects.count>0) {
         AVMetadataMachineReadableCodeObject *object = [metadataObjects firstObject];  
-
+ 
+        NSLog(@"%@",object.stringValue);
+        UIAlertView *alle = [[UIAlertView alloc]initWithTitle:@"扫描结果" message:object.stringValue delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alle show];
         CZWebViewController *czWebView = [[CZWebViewController alloc]init];
         NSString *urlStr = [NSString stringWithFormat:@"%@",object.stringValue];
         
@@ -276,7 +279,7 @@
             UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"扫描到的信息" message:urlStr delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [alertView show];
         }
-        NSLog(@"%@",object.stringValue);
+       
         
     }else{
         NSLog(@"没有数据");
