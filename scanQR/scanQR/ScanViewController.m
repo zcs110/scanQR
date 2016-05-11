@@ -264,8 +264,8 @@
         AVMetadataMachineReadableCodeObject *object = [metadataObjects firstObject];  
 
         CZWebViewController *czWebView = [[CZWebViewController alloc]init];
-        NSMutableString *urlStr = [NSMutableString string];
-        urlStr = [NSMutableString stringWithFormat:@"%@",object.stringValue];
+        NSString *urlStr = [NSString stringWithFormat:@"%@",object.stringValue];
+        
         if ([object.stringValue hasPrefix:@"http"]) {
             
             czWebView.webViewURL = urlStr;
