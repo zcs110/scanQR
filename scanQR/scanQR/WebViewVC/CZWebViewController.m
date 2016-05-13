@@ -10,9 +10,9 @@
 @interface CZWebViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *czWebView;
 /** 没有网络 */
-@property (nonatomic, copy) NSString *netWorkName;
-@property (nonatomic, strong) UIView *noNetWorkView;
-@property (nonatomic, assign, getter=isShowNoNetWorkView) BOOL showNetWorkView;
+//@property (nonatomic, copy) NSString *netWorkName;
+//@property (nonatomic, strong) UIView *noNetWorkView;
+//@property (nonatomic, assign, getter=isShowNoNetWorkView) BOOL showNetWorkView;
 /** 商家名 */
 @property (nonatomic, copy) NSString *businessName;
 /** 优惠券名 */
