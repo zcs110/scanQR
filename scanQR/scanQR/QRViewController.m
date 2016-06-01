@@ -39,12 +39,12 @@
     //5.1设置默认值
     [colorFilter setDefaults];
     [colorFilter setValue:ciImg forKey:@"inputImage"];
-    [colorFilter setValue:[CIColor colorWithRed:1 green:0 blue:0] forKey:@"inputColor0"];
-    [colorFilter setValue:[CIColor colorWithRed:0 green:0 blue:1] forKey:@"inputColor1"];
+//    [colorFilter setValue:[CIColor colorWithRed:1 green:0 blue:0] forKey:@"inputColor0"];
+//    [colorFilter setValue:[CIColor colorWithRed:0 green:0 blue:1] forKey:@"inputColor1"];
     //5.3获取生存的图片
     ciImg=colorFilter.outputImage;
     
-    CGAffineTransform scale=CGAffineTransformMakeScale(8, 8);
+    CGAffineTransform scale=CGAffineTransformMakeScale(10, 10);
     ciImg=[ciImg imageByApplyingTransform:scale];
     
     //    self.imgView.image=[UIImage imageWithCIImage:ciImg];
