@@ -27,6 +27,7 @@
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *preLayer;
 @property (nonatomic, strong) UILabel *titleLable;
 @property (nonatomic, assign) BOOL isLightOn;
+@property (nonatomic, copy) NSString *urlStr;
 @end
 
 @implementation ScanViewController
@@ -158,7 +159,10 @@
 
 }
 #pragma mark - UIImagePickerControllerDelegate
+//识别二维码代理
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    __weak typeof (self) weakself = self;
     [picker dismissViewControllerAnimated:true completion:^{
         UIImage *image = info[UIImagePickerControllerEditedImage];
         if (!image) {
@@ -179,9 +183,16 @@
         NSLog(@"detector: %@", detector);
         NSLog(@"context: %@", feature.messageString);
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:[NSString stringWithFormat:@"扫描结果：%@", feature.messageString ?: @"空"] preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"Sure" style:UIAlertActionStyleCancel handler:nil]];
-        [self presentViewController:alert animated:true completion:nil];
+        weakself.urlStr = feature.messageString;
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
         
+        [weakself presentViewController:alert animated:true completion:^{
+            [weakself pushSOM];
+        }];
+        
+        
+
     }];
 }
 
@@ -295,6 +306,15 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
+-(void)pushSOM{
+    
+    if ([self.urlStr hasPrefix:@"http"]) {
+        CZWebViewController *czWebView = [[CZWebViewController alloc]init];
+        NSString *urlStr = [NSString stringWithFormat:@"%@",self.urlStr];
+        czWebView.webViewURL = urlStr;
+        [self.navigationController pushViewController:czWebView animated:YES];
+    }
+   
+}
 
 @end
